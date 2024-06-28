@@ -15,3 +15,22 @@ print(classificar_idade(30))  # Saída esperada: Adulto
 print(classificar_idade(70))  # Saída esperada: Idoso
 
 '''
+
+idade = int(input('Digite sua idade: '))
+
+def classificar_idade(idade):
+    if idade < 12:
+        return 'criança'
+    elif idade <= 17:
+        return 'Adolesente'
+    elif idade <= 64:
+        return 'Adulto'
+    else:
+        return 'idoso'
+
+print(classificar_idade(idade))
+
+
+
+
+

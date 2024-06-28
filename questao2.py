@@ -24,3 +24,47 @@ Os números digitados devem ser armazenados em uma lista e depois de encerrar, m
 
 '''
 
+def calculadora(a, b, operacao):
+    if operacao == '+':
+        return a + b
+    elif operacao == '-':
+        return a - b
+    elif operacao == '*':
+        return a * b
+    elif operacao == '/':
+        if b == 0:
+            return "Erro: divisão por zero!"
+        else:
+            return a / b
+    else:
+        return "Operação inválida!"
+
+
+numeros = []
+    
+while True:
+    try:
+            num1 = float(input("Digite o primeiro número (ou 's' para sair): "))
+            if num1 == 's':
+                break
+            num2 = float(input("Digite o segundo número: "))
+            operacao = input("Digite a operação (+, -, *, /): ")
+
+            resultado = calculadora(num1, num2, operacao)
+            print(f"Resultado: {resultado}")
+
+            numeros.append(num1)
+            numeros.append(num2)
+        
+    except ValueError:
+            print("Entrada inválida. Por favor, digite um número válido.")
+        
+    except Exception as e:
+            print(f"Ocorreu um erro: {e}")
+    
+    if numeros:
+        print("\n=== Estatísticas dos números ===")
+        print(f"Números digitados: {numeros}")
+        print(f"Maior número: {max(numeros)}")
+        print(f"Menor número: {min(numeros)}")
+        print(f"Média dos números: {sum(numeros) / len(numeros)}")
